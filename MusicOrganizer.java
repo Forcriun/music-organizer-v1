@@ -59,4 +59,15 @@ public class MusicOrganizer
             files.remove(index);
         }
     }
+    
+    /**
+     * Comprueba que el indice introducido por paramtro sea valido. Si es 
+     * falso muestra un mensaje por pantalla con el rango de indices validos.
+     * @param index El indice a comprobar..
+     */
+    public void checkIndex(int index){
+        if(!(index >= 0 && index < files.size())){
+            System.out.println("Error: el rango de valores del índice es de 0 a " + (files.size()-1));
+        }
+    }
 }
