@@ -10,7 +10,7 @@ public class MusicOrganizer
 {
     // An ArrayList for storing the file names of music files.
     private ArrayList<String> files;
-        
+
     /**
      * Create a MusicOrganizer
      */
@@ -18,7 +18,7 @@ public class MusicOrganizer
     {
         files = new ArrayList<String>();
     }
-    
+
     /**
      * Add a file to the collection.
      * @param filename The file to be added.
@@ -27,7 +27,7 @@ public class MusicOrganizer
     {
         files.add(filename);
     }
-    
+
     /**
      * Return the number of files in the collection.
      * @return The number of files in the collection.
@@ -36,7 +36,7 @@ public class MusicOrganizer
     {
         return files.size();
     }
-    
+
     /**
      * List a file from the collection.
      * @param index The index of the file to be listed.
@@ -48,7 +48,7 @@ public class MusicOrganizer
             System.out.println(filename);
         }
     }
-    
+
     /**
      * Remove a file from the collection.
      * @param index The index of the file to be removed.
@@ -59,15 +59,28 @@ public class MusicOrganizer
             files.remove(index);
         }
     }
-    
+
     /**
      * Comprueba que el indice introducido por paramtro sea valido. Si es 
      * falso muestra un mensaje por pantalla con el rango de indices validos.
-     * @param index El indice a comprobar..
+     * @param index El indice a comprobar.
      */
     public void checkIndex(int index){
         if(!(index >= 0 && index < files.size())){
             System.out.println("Error: el rango de valores del índice es de 0 a " + (files.size()-1));
         }
+    }
+
+    /**
+     * Comprueba que el indice introducido por paramtro sea valido.
+     * @param index El indice a comprobar.
+     * @return Devuelve true si el indice es valido. Devuelve false si no es valido.
+     */
+    public boolean validIndex(int index){
+        boolean esValido = true;
+        if(!(index >= 0 && index < files.size())){
+            esValido = false;
+        }
+        return esValido;
     }
 }
